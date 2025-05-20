@@ -1,0 +1,164 @@
+/* Footer wrapper styling */
+footer {
+  background-color: black;
+  margin-top: auto;
+  padding: 40px 0 20px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #fff;
+}
+
+/* Row container */
+.row {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Each column inside footer */
+.col {
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.col:nth-child(2),
+.col:nth-child(3) {
+  flex-basis: 15%;
+}
+
+/* Logo image */
+.logo {
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+/* Column titles */
+.col h3 {
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Email styling */
+.email-id {
+  width: fit-content;
+  border-bottom: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+/* Navigation links (replacing dl/dt with ul/li) */
+.second-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.second-list li {
+  margin-bottom: 12px;
+}
+
+.second-list li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.second-list li a:hover {
+  color: #ccc;
+}
+
+/* Newsletter form */
+form {
+  padding-bottom: 15px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+form input {
+  width: 100%;
+  color: #ccc;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 13px;
+}
+
+/* Placeholder icon styles – adjust if using React Icons or Font Awesome */
+.icon-mail,
+.icon-arrow-forward {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+/* Social icon styling */
+.social-icons ion-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+  cursor: pointer;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  background: #fff;
+  color: black;
+  display: inline-block;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.social-icons span:hover {
+  background: #ccc;
+  color: #000;
+}
+
+/* Horizontal line */
+hr {
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 20px auto;
+}
+
+/* Copyright text */
+.copy-right {
+  text-align: center;
+}
+
+/* Underline animation under headings */
+.underline {
+  width: 100%;
+  height: 5px;
+  background: #767676;
+  border-radius: 3px;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  overflow: hidden;
+}
+
+.underline span {
+  width: 15px;
+  height: 100%;
+  background: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  animation: moving 2s linear infinite;
+}
+
+@keyframes moving {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: 100%;
+  }
+}

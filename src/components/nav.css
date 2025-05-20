@@ -1,0 +1,104 @@
+/* Basic Styles for Header */
+.header {
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  background-color: black;
+}
+
+.website-name {
+  padding-left: 10px;
+  color: white;
+}
+
+.website-name:hover {
+  color: lightgray;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* Nav Styling */
+nav {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;
+}
+
+/* Styling for the Unordered List */
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for Each List Item */
+nav li {
+  position: relative; /* For positioning the dropdown menu */
+  padding: 10px 20px;
+}
+
+/* Basic Link Style */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+}
+
+/* Hover effect on Links */
+nav li:hover > a {
+  background-color: #555; /* Lighten the background on hover */
+}
+
+/* Dropdown Menu Style */
+nav .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position it just below the parent */
+  left: 0;
+  background-color: #444; /* Dropdown background color */
+  min-width: 200px;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+/* Style for Dropdown Links */
+nav .dropdown li a {
+  padding: 10px;
+  background-color: #444;
+  color: white;
+  display: block;
+}
+
+nav .dropdown li a:hover {
+  background-color: #07afd9;
+}
+
+/* Show dropdown when hovering over the parent li */
+nav li:hover .dropdown {
+  display: block;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  margin-top: 8px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 5px;
+  width: 200px;
+  border-radius: 5px;
+}

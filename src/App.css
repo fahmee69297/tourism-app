@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+/* App.css */
+
+/* Make the full height available to the app */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set up the app container as a vertical flexbox */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full height */
+}
+
+/* Allow main content to grow and push the footer down */
+.content {
+  flex: 1;
+}
