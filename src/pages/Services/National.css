@@ -3,3 +3,10 @@
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.national-parks .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.national .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}

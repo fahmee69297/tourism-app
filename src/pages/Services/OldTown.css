@@ -3,3 +3,18 @@
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.old-town .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 420px;
+}
+.old-town .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.old-town .card-img-top {
+  height: 200px; /* Adjust this value as needed */
+  object-fit: cover;
+}
+.card-row-offset {
+  margin-left: 80px; /* Adjust to your needs */
+}
