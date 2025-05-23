@@ -3,7 +3,7 @@ import "./footer.css"; // assuming you're importing a CSS file
 
 function Foot() {
   return (
-    <footer>
+    <footer className="container-fluid">
       <div className="row">
         <div className="col">
           <img className="logo" src="../fadak.png" alt="Fadak Logo" />

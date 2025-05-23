@@ -1,5 +1,38 @@
 .services {
-  padding-top: 100px;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 100px 0 100px 150px; /* Top and bottom only */
+  text-align: center;
+}
+
+/* Services.css */
+
+.services-header {
+  text-align: center;
+  padding-right: 200px;
+}
+
+.service-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: space-between;
+  height: 350px;
+  overflow: hidden;
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px; /* Fixed height */
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555;
 }
