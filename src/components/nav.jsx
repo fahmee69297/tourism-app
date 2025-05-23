@@ -63,16 +63,16 @@ function Nav() {
             <Link to="/about">About Us</Link>
             <ul className="dropdown">
               <li>
-                <Link to="/about/mission">Company Mission</Link>
+                <Link to="/about#mission">Company Mission</Link>
               </li>
               <li>
-                <Link to="/about/values">Company Values</Link>
+                <Link to="/about#values">Company Values</Link>
               </li>
               <li>
-                <Link to="/about/history">Company History</Link>
+                <Link to="/about#history">Company History</Link>
               </li>
               <li>
-                <Link to="/about/team">Meet the Team</Link>
+                <Link to="/about#team">Meet the Team</Link>
               </li>
             </ul>
           </li>

@@ -1,5 +1,23 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .about {
   padding-top: 100px;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.about section {
+  margin-top: 80px;
+}
+
+.about h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 16px;
+  line-height: 1.6;
 }
