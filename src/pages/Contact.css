@@ -1,5 +1,22 @@
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling to anchor links */
+}
+
 .contact {
   padding-top: 100px;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.contact section {
+  margin-top: 80px; /* Adds space between sections */
+}
+
+.contact h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.contact p {
+  margin-bottom: 30px;
 }

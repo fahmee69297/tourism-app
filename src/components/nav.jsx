@@ -81,19 +81,19 @@ function Nav() {
             <Link to="/contact">Contact Us</Link>
             <ul className="dropdown">
               <li>
-                <Link to="/contact/call">Call us</Link>
+                <Link to="/contact#call">Call us</Link>
               </li>
               <li>
-                <Link to="/contact/email">Email us</Link>
+                <Link to="/contact#email">Email us</Link>
               </li>
               <li>
-                <Link to="/contact/facebook">Facebook</Link>
+                <Link to="/contact#facebook">Facebook</Link>
               </li>
               <li>
-                <Link to="/contact/instagram">Instagram</Link>
+                <Link to="/contact#instagram">Instagram</Link>
               </li>
               <li>
-                <Link to="/contact/tiktok">TikTok</Link>
+                <Link to="/contact#tiktok">TikTok</Link>
               </li>
             </ul>
           </li>
