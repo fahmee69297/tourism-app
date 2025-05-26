@@ -34,7 +34,7 @@ function NationalParks() {
   return (
     <Container className="national-parks py-5">
       <h1 className="text-center mb-4">Explore Kenya’s National Parks</h1>
-      <Row className="g-4">
+      <Row className="g-4 card-row-offset">
         {parks.map((park, index) => (
           <Col md={6} lg={4} key={index}>
             <Card className="h-100">

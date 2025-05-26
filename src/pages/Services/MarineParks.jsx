@@ -5,32 +5,32 @@ import "./Marine.css";
 const parks = [
   {
     name: "Mombasa Marine Park",
-    img: "/marine/mombasa.jpg",
+    img: "/assets/msa-marine.jpg",
     desc: "Stunning coral reefs, sea turtles, and crystal clear waters.",
   },
   {
     name: "Malindi Marine Park",
-    img: "/marine/malindi.jpg",
+    img: "/assets/malindi-marine.jpg",
     desc: "Kenya’s oldest marine park, famous for its coral gardens.",
   },
   {
     name: "Watamu Marine Park",
-    img: "/marine/watamu.jpg",
+    img: "/assets/watamu-marine.jpg",
     desc: "Home to green turtles and an intricate reef system.",
   },
   {
     name: "Kisite-Mpunguti Marine Park",
-    img: "/marine/kisite.jpg",
+    img: "/assets/kisite.jpg",
     desc: "Snorkel with dolphins and possibly spot a humpback whale.",
   },
   {
     name: "Sunset Sailing",
-    img: "/marine/sunset-sailing.jpg", // Update the path if needed
+    img: "/assets/sunset-sailing.jpg", // Update the path if needed
     desc: "Relax on a traditional dhow as the sun sets over the Indian Ocean.",
   },
   {
     name: "Kiunga Marine Reserve",
-    img: "/marine/kiunga.jpg",
+    img: "/assets/kiunga-marine.jpg",
     desc: "A haven for sea turtles and exotic marine life in Lamu.",
   },
 ];
@@ -41,7 +41,7 @@ function MarineParks() {
       <div className="marine-parks-header text-center my-5">
         <h1>Explore Kenya's Marine Parks</h1>
       </div>
-      <Row className="g-4">
+      <Row className="g-4 card-row-offset">
         {parks.map((park, index) => (
           <Col md={6} lg={4} key={index}>
             <Card className="h-100">

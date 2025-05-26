@@ -1,38 +1,50 @@
-/* Marine.css */
-
 .marine-parks {
-  padding: 100px 0 100px 150px;
+  padding: 100px 2rem;
   text-align: center;
 }
 
 .marine-parks h1 {
   text-align: center;
-  padding-right: 200px;
 }
 
 .marine-parks .card {
   border: 1px solid #ddd;
-  padding: 15px;
   text-align: center;
-  height: 350px;
+  display: flex;
+  flex-direction: column;
   min-height: 420px;
-  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-img-top {
+.marine-parks .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.marine-parks .card-img-top {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  margin-bottom: 15px;
+}
+
+.marine-parks .card-body {
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+  padding: 15px;
+  justify-content: flex-start;
 }
 
 .card-title {
-  margin-bottom: 10px;
   font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .card-text {
   font-size: 1rem;
   color: #555;
+}
+.card-row-offset {
+  margin-left: 80px; /* Adjust to your needs */
 }
