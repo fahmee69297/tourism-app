@@ -24,6 +24,11 @@ const parks = [
     desc: "Snorkel with dolphins and possibly spot a humpback whale.",
   },
   {
+    name: "Sunset Sailing",
+    img: "/marine/sunset-sailing.jpg", // Update the path if needed
+    desc: "Relax on a traditional dhow as the sun sets over the Indian Ocean.",
+  },
+  {
     name: "Kiunga Marine Reserve",
     img: "/marine/kiunga.jpg",
     desc: "A haven for sea turtles and exotic marine life in Lamu.",
@@ -32,8 +37,10 @@ const parks = [
 
 function MarineParks() {
   return (
-    <Container className="marine-parks py-5">
-      <h1 className="text-center mb-4">Explore Kenya's Marine Parks</h1>
+    <Container className="marine-parks py-5 mt-5">
+      <div className="marine-parks-header text-center my-5">
+        <h1>Explore Kenya's Marine Parks</h1>
+      </div>
       <Row className="g-4">
         {parks.map((park, index) => (
           <Col md={6} lg={4} key={index}>
