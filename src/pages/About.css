@@ -10,6 +10,8 @@ html {
 
 .about section {
   margin-top: 80px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 .about h2 {

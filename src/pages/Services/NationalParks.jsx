@@ -5,27 +5,32 @@ import "./National.css"; // Create this CSS file if you want custom styling
 const parks = [
   {
     name: "Amboseli National Park",
-    img: "/national/amboseli.jpg",
+    img: "/assets/Amboseli.jpg",
     desc: "Famous for elephant herds and stunning views of Mt. Kilimanjaro.",
   },
   {
     name: "Masai Mara National Reserve",
-    img: "/national/masai-mara.jpg",
+    img: "/assets/masai-mara.jpg",
     desc: "Home to the Great Migration and diverse wildlife.",
   },
   {
     name: "Lake Nakuru National Park",
-    img: "/national/nakuru.jpg",
+    img: "/assets/lake-nakuru.jpg",
     desc: "Known for flamingos and rhino conservation.",
   },
   {
     name: "Samburu National Reserve",
-    img: "/national/samburu.jpg",
+    img: "/assets/samburu.jpg",
     desc: "Features unique species like the Grevy’s zebra.",
   },
   {
+    name: "Aberdare National Park",
+    img: "/assets/aberdare.jpg",
+    desc: "Known for its misty forests, waterfalls, and diverse wildlife, Aberdare National Park offers a breathtaking highland experience.",
+  },
+  {
     name: "Tsavo National Park",
-    img: "/national/tsavo.jpg",
+    img: "/assets/tsavo.jpg",
     desc: "One of Kenya’s largest parks with diverse landscapes.",
   },
 ];

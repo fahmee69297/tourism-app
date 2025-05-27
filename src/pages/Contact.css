@@ -9,7 +9,9 @@ html {
 }
 
 .contact section {
-  margin-top: 80px; /* Adds space between sections */
+  margin-top: 10px; /* Adds space between sections */
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 .contact h2 {
@@ -18,5 +20,5 @@ html {
 }
 
 .contact p {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
