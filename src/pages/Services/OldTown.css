@@ -5,7 +5,7 @@
 }
 .old-town .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 420px;
+  min-height: 100%;
 }
 .old-town .card:hover {
   transform: scale(1.03);
@@ -17,4 +17,9 @@
 }
 .card-row-offset {
   margin-left: 80px; /* Adjust to your needs */
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
 }

@@ -9,7 +9,7 @@ const parks = [
     desc: "Famous for elephant herds and stunning views of Mt. Kilimanjaro.",
   },
   {
-    name: "Masai Mara National Reserve",
+    name: "Masai Mara Reserve",
     img: "/assets/masai-mara.jpg",
     desc: "Home to the Great Migration and diverse wildlife.",
   },
@@ -26,7 +26,7 @@ const parks = [
   {
     name: "Aberdare National Park",
     img: "/assets/aberdare.jpg",
-    desc: "Known for its misty forests, waterfalls, and diverse wildlife, Aberdare National Park offers a breathtaking highland experience.",
+    desc: "Known for its misty forests, waterfalls, and diverse wildlife, ",
   },
   {
     name: "Tsavo National Park",
@@ -41,12 +41,22 @@ function NationalParks() {
       <h1 className="text-center mb-4">Explore Kenya’s National Parks</h1>
       <Row className="g-4 card-row-offset">
         {parks.map((park, index) => (
-          <Col md={6} lg={4} key={index}>
-            <Card className="h-100">
+          <Col md={6} lg={4} key={index} className="h-100">
+            <Card className="h-100 ">
               <Card.Img variant="top" src={park.img} />
               <Card.Body>
                 <Card.Title>{park.name}</Card.Title>
                 <Card.Text>{park.desc}</Card.Text>
+
+                {/* Booking and Pricing Buttons */}
+                <div className="card-actions mt-3">
+                  <button className="btn btn-primary btn-sm me-2">
+                    Book Safari
+                  </button>
+                  <button className="btn btn-outline-secondary btn-sm">
+                    Request Pricing
+                  </button>
+                </div>
               </Card.Body>
             </Card>
           </Col>

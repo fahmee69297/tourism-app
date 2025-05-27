@@ -19,7 +19,7 @@ const parks = [
     desc: "Home to green turtles and an intricate reef system.",
   },
   {
-    name: "Kisite-Mpunguti Marine Park",
+    name: "Kisite Marine Park",
     img: "/assets/kisite.jpg",
     desc: "Snorkel with dolphins and possibly spot a humpback whale.",
   },
@@ -49,6 +49,15 @@ function MarineParks() {
               <Card.Body>
                 <Card.Title>{park.name}</Card.Title>
                 <Card.Text>{park.desc}</Card.Text>
+
+                <div className="card-actions mt-3">
+                  <button className="btn btn-primary btn-sm me-2">
+                    Book Safari
+                  </button>
+                  <button className="btn btn-outline-secondary btn-sm">
+                    Request Pricing
+                  </button>
+                </div>
               </Card.Body>
             </Card>
           </Col>

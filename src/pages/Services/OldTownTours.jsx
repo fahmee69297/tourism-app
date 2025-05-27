@@ -47,6 +47,15 @@ function OldTownTours() {
               <Card.Body>
                 <Card.Title>{town.name}</Card.Title>
                 <Card.Text>{town.desc}</Card.Text>
+
+                <div className="card-actions mt-3">
+                  <button className="btn btn-primary btn-sm me-2">
+                    Book Safari
+                  </button>
+                  <button className="btn btn-outline-secondary btn-sm">
+                    Request Pricing
+                  </button>
+                </div>
               </Card.Body>
             </Card>
           </Col>
