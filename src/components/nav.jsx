@@ -51,7 +51,7 @@ function Nav() {
                 <Link to="/packages/adventure">Adventure Tours</Link>
               </li>
               <li>
-                <Link to="/packages/luxury">Luxury Tours</Link>
+                <Link to="/packages/luxury">Halal Tours</Link>
               </li>
               <li>
                 <Link to="/packages/group">Group Tours</Link>
