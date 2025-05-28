@@ -10,95 +10,141 @@
   left: 0;
   right: 0;
   z-index: 100;
-
   background-color: black;
+  padding: 0 20px;
 }
 
+/* Website name styling */
 .website-name {
-  padding-left: 10px;
   color: white;
-}
-
-.website-name:hover {
-  color: lightgray;
-  transition: 0.5s;
+  font-weight: bold;
+  font-size: 18px;
   cursor: pointer;
 }
 
-/* Nav Styling */
-nav {
-  display: flex;
-  justify-content: center; /* Center items horizontally */
-  align-items: center;
+/* Hamburger menu icon */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
 }
 
-/* Styling for the Unordered List */
+/* Nav container */
+nav.nav {
+  display: flex;
+}
+
+nav.open {
+  display: block;
+}
+
 nav ul {
   display: flex;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-/* Styling for Each List Item */
 nav li {
-  position: relative; /* For positioning the dropdown menu */
+  position: relative;
   padding: 10px 20px;
 }
 
-/* Basic Link Style */
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
-  display: block;
+  font-size: 16px;
 }
 
-/* Hover effect on Links */
-nav li:hover > a {
-  background-color: #555; /* Lighten the background on hover */
-}
-
-/* Dropdown Menu Style */
+/* Dropdowns */
 nav .dropdown {
   display: none;
   position: absolute;
-  top: 100%; /* Position it just below the parent */
+  top: 100%;
   left: 0;
-  background-color: #444; /* Dropdown background color */
+  background-color: #444;
   min-width: 200px;
-  padding: 10px 0;
   z-index: 10;
 }
 
-/* Style for Dropdown Links */
+nav li:hover .dropdown {
+  display: block;
+}
+
 nav .dropdown li a {
   padding: 10px;
-  background-color: #444;
-  color: white;
   display: block;
+  background-color: #444;
 }
 
 nav .dropdown li a:hover {
   background-color: #07afd9;
 }
 
-/* Show dropdown when hovering over the parent li */
-nav li:hover .dropdown {
-  display: block;
-}
-
-/* Search Bar Styling */
-.search-bar {
-  margin-top: 8px;
-  text-align: center;
-  margin-right: 8px;
-}
-
+/* Search bar */
 .search-bar input {
-  padding: 10px;
-  font-size: 5px;
-  width: 200px;
+  padding: 8px;
+  font-size: 14px;
   border-radius: 5px;
+  border: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+  }
+
+  nav.nav {
+    display: none;
+    width: 100%;
+  }
+
+  nav.open {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav li {
+    width: 100%;
+    padding: 10px;
+  }
+
+  nav li:hover .dropdown {
+    display: none; /* Disable hover dropdowns on mobile */
+  }
+
+  nav li:focus-within .dropdown,
+  nav li:active .dropdown {
+    display: block;
+  }
+
+  .dropdown {
+    position: static;
+    padding-left: 20px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-bar input {
+    width: 90%;
+  }
 }

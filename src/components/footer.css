@@ -50,7 +50,7 @@ footer {
   margin: 20px 0;
 }
 
-/* Navigation links (replacing dl/dt with ul/li) */
+/* Navigation links */
 .second-list {
   list-style: none;
   padding: 0;
@@ -71,30 +71,40 @@ footer {
   color: #ccc;
 }
 
-/* Newsletter form */
+/* Newsletter form container */
 form {
   padding-bottom: 15px;
-  align-items: center;
-  justify-content: space-between;
   display: flex;
-  border-bottom: 1px solid #ccc;
+  flex-direction: column;
+  border-bottom: none;
   margin-bottom: 50px;
 }
 
-form input {
-  width: 100%;
-  color: #ccc;
-  background: transparent;
-  border: 0;
-  outline: none;
-  font-size: 13px;
+/* Email box container for input + icons */
+.email-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  max-width: 300px;
+  background-color: transparent;
 }
 
-/* Placeholder icon styles – adjust if using React Icons or Font Awesome */
-.icon-mail,
-.icon-arrow-forward {
-  font-size: 18px;
-  margin-right: 10px;
+/* Input field inside email box */
+.email-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Font Awesome icon styling */
+.email-box .fas {
+  margin: 0 8px;
+  font-size: 16px;
   color: #fff;
 }
 
@@ -114,7 +124,7 @@ form input {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.social-icons span:hover {
+.social-icons ion-icon:hover {
   background: #ccc;
   color: #000;
 }

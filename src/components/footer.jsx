@@ -61,9 +61,12 @@ function Foot() {
           </h3>
           <form>
             {/* Replace ion-icon with actual icons or spans if needed */}
-            <span className="icon-mail" />
-            <input type="email" placeholder="Enter your email id" required />
-            <span className="icon-arrow-forward" />
+            <div className="email-box">
+              {" "}
+              <span className="icon-mail" />
+              <input type="email" placeholder="Enter your email id" required />
+              <span className="fas fa-arrow-right" /> {/* Forward arrow */}
+            </div>
           </form>
           <div className="social-icons">
             <ion-icon name="logo-facebook"></ion-icon>

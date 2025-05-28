@@ -1,12 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
 
 function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="header">
       <div className="website-name">FADAK TRAVELS.com</div>
 
-      <nav>
+      {/* Hamburger Icon */}
+      <div className="menu-icon" onClick={toggleMenu}>
+        ☰
+      </div>
+
+      {/* Navigation */}
+      <nav className={menuOpen ? "nav open" : "nav"}>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -25,7 +38,6 @@ function Nav() {
               </li>
             </ul>
           </li>
-
           <li>
             <Link to="/services">Locations</Link>
             <ul className="dropdown">
@@ -40,7 +52,6 @@ function Nav() {
               </li>
             </ul>
           </li>
-
           <li>
             <Link to="/packages">Packages</Link>
             <ul className="dropdown">
@@ -58,7 +69,6 @@ function Nav() {
               </li>
             </ul>
           </li>
-
           <li>
             <Link to="/about">About Us</Link>
             <ul className="dropdown">
@@ -76,7 +86,6 @@ function Nav() {
               </li>
             </ul>
           </li>
-
           <li>
             <Link to="/contact">Contact Us</Link>
             <ul className="dropdown">
@@ -101,7 +110,7 @@ function Nav() {
       </nav>
 
       <div className="search-bar">
-        <input type="text" />
+        <input type="text" placeholder="Search..." />
       </div>
     </div>
   );

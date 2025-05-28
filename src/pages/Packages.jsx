@@ -51,7 +51,7 @@ function Packages() {
                       Book Now
                     </Button>
                     <Button variant="outline-secondary" size="sm">
-                      Request Pricing
+                      Details Here
                     </Button>
                   </div>
                 </Card.Body>
