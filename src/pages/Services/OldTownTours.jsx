@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import "./OldTown.css"; // Create this CSS file if desired
+import InquiryFormModal from "./InquiryFormModal"; // Import the InquiryFormModal component
+import "./OldTown.css"; // Assuming you have custom styles here
 
 const towns = [
   {
@@ -36,6 +37,18 @@ const towns = [
 ];
 
 function OldTownTours() {
+  // State to manage modal visibility and data
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedTown, setSelectedTown] = useState(null);
+  const [formType, setFormType] = useState(""); // 'Book Safari' or 'Request Pricing'
+
+  // Function to open modal with selected town and form type
+  const handleOpenModal = (town, type) => {
+    setSelectedTown(town);
+    setFormType(type);
+    setModalShow(true);
+  };
+
   return (
     <Container className="old-town py-5 mt-5">
       <h1 className="text-center mb-4">Discover Kenya’s Old Towns</h1>
@@ -49,10 +62,16 @@ function OldTownTours() {
                 <Card.Text>{town.desc}</Card.Text>
 
                 <div className="card-actions mt-3">
-                  <button className="btn btn-primary btn-sm me-2">
+                  <button
+                    className="btn btn-primary btn-sm me-2"
+                    onClick={() => handleOpenModal(town, "Book Safari")}
+                  >
                     Book Safari
                   </button>
-                  <button className="btn btn-outline-secondary btn-sm">
+                  <button
+                    className="btn btn-outline-secondary btn-sm"
+                    onClick={() => handleOpenModal(town, "Request Pricing")}
+                  >
                     Request Pricing
                   </button>
                 </div>
@@ -61,6 +80,16 @@ function OldTownTours() {
           </Col>
         ))}
       </Row>
+
+      {/* InquiryFormModal */}
+      {selectedTown && (
+        <InquiryFormModal
+          show={modalShow}
+          handleClose={() => setModalShow(false)}
+          parkName={selectedTown.name} // Passing town name to modal
+          type={formType}
+        />
+      )}
     </Container>
   );
 }

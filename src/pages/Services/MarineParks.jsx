@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import InquiryFormModal from "./InquiryFormModal"; // Import modal component
 import "./Marine.css";
 
 const parks = [
@@ -36,6 +37,17 @@ const parks = [
 ];
 
 function MarineParks() {
+  // State to control modal visibility and selected park data
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedPark, setSelectedPark] = useState(null);
+  const [formType, setFormType] = useState(""); // To determine which form type ("Book Safari" or "Request Pricing")
+
+  const handleOpenModal = (park, type) => {
+    setSelectedPark(park);
+    setFormType(type);
+    setModalShow(true);
+  };
+
   return (
     <Container className="marine-parks py-5 mt-5">
       <div className="marine-parks-header text-center my-5">
@@ -51,10 +63,16 @@ function MarineParks() {
                 <Card.Text>{park.desc}</Card.Text>
 
                 <div className="card-actions mt-3">
-                  <button className="btn btn-primary btn-sm me-2">
+                  <button
+                    className="btn btn-primary btn-sm me-2"
+                    onClick={() => handleOpenModal(park, "Book Safari")}
+                  >
                     Book Safari
                   </button>
-                  <button className="btn btn-outline-secondary btn-sm">
+                  <button
+                    className="btn btn-outline-secondary btn-sm"
+                    onClick={() => handleOpenModal(park, "Request Pricing")}
+                  >
                     Request Pricing
                   </button>
                 </div>
@@ -63,6 +81,16 @@ function MarineParks() {
           </Col>
         ))}
       </Row>
+
+      {/* Modal Component */}
+      {selectedPark && (
+        <InquiryFormModal
+          show={modalShow}
+          handleClose={() => setModalShow(false)}
+          parkName={selectedPark.name}
+          type={formType}
+        />
+      )}
     </Container>
   );
 }

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import "./National.css"; // Create this CSS file if you want custom styling
+import InquiryFormModal from "./InquiryFormModal"; // Import the InquiryFormModal component
+import "./National.css"; // Assuming you have custom styles here
 
 const parks = [
   {
@@ -26,7 +27,7 @@ const parks = [
   {
     name: "Aberdare National Park",
     img: "/assets/aberdare.jpg",
-    desc: "Known for its misty forests, waterfalls, and diverse wildlife, ",
+    desc: "Known for its misty forests, waterfalls, and diverse wildlife.",
   },
   {
     name: "Tsavo National Park",
@@ -36,13 +37,25 @@ const parks = [
 ];
 
 function NationalParks() {
+  // State to handle modal visibility and data
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedPark, setSelectedPark] = useState(null);
+  const [formType, setFormType] = useState(""); // 'Book Safari' or 'Request Pricing'
+
+  // Function to open the modal and set the selected park and form type
+  const handleOpenModal = (park, type) => {
+    setSelectedPark(park);
+    setFormType(type);
+    setModalShow(true);
+  };
+
   return (
     <Container className="national-parks py-5 mt-5">
       <h1 className="text-center mb-4">Explore Kenya’s National Parks</h1>
       <Row className="g-4 card-row-offset">
         {parks.map((park, index) => (
           <Col md={6} lg={4} key={index} className="h-100">
-            <Card className="h-100 ">
+            <Card className="h-100">
               <Card.Img variant="top" src={park.img} />
               <Card.Body>
                 <Card.Title>{park.name}</Card.Title>
@@ -50,10 +63,16 @@ function NationalParks() {
 
                 {/* Booking and Pricing Buttons */}
                 <div className="card-actions mt-3">
-                  <button className="btn btn-primary btn-sm me-2">
+                  <button
+                    className="btn btn-primary btn-sm me-2"
+                    onClick={() => handleOpenModal(park, "Book Safari")}
+                  >
                     Book Safari
                   </button>
-                  <button className="btn btn-outline-secondary btn-sm">
+                  <button
+                    className="btn btn-outline-secondary btn-sm"
+                    onClick={() => handleOpenModal(park, "Request Pricing")}
+                  >
                     Request Pricing
                   </button>
                 </div>
@@ -62,6 +81,16 @@ function NationalParks() {
           </Col>
         ))}
       </Row>
+
+      {/* Modal Component */}
+      {selectedPark && (
+        <InquiryFormModal
+          show={modalShow}
+          handleClose={() => setModalShow(false)}
+          parkName={selectedPark.name}
+          type={formType}
+        />
+      )}
     </Container>
   );
 }
