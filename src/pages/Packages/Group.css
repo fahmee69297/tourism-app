@@ -1,5 +1,41 @@
+/* Group.css */
+
+/* Container for the entire section to center both text and the card */
 .group {
-  padding-top: 100px;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Center text */
+}
+
+/* Make sure the Container takes full width and is centered */
+.container-center {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  width: 100%; /* Take full width of the parent */
+}
+
+/* Set width and height for the card */
+.package-card {
+  width: 300px;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden; /* Ensures content stays within the card boundaries */
+}
+
+/* Set width and height for the image */
+.package-img {
+  object-fit: cover;
+  height: 50%; /* Adjusts the image height to fit within the card */
+  width: 100%;
+}
+
+/* Optional: Set height of the card body to fill the remaining space */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
