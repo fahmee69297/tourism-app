@@ -35,19 +35,19 @@ function Foot() {
           </h3>
           <ul className="second-list">
             <li>
-              <a href="#">Home</a>
+              <button className="link-button">Home</button>
             </li>
             <li>
-              <a href="#">Services</a>
+              <button className="link-button">Services</button>
             </li>
             <li>
-              <a href="#">About us</a>
+              <button className="link-button">About us</button>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <button className="link-button">Contact</button>
             </li>
             <li>
-              <a href="#">Features</a>
+              <button className="link-button">Features</button>
             </li>
           </ul>
         </div>
