@@ -1,4 +1,8 @@
 /* Basic Styles for Header */
+body {
+  padding-top: 75px;
+}
+
 .header {
   height: 75px;
   display: flex;
@@ -97,7 +101,11 @@ nav .dropdown li a:hover {
     align-items: flex-start;
     height: auto;
   }
-
+  @media screen and (max-width: 768px) {
+    body {
+      padding-top: 120px; /* adjust based on how tall your header is in mobile view */
+    }
+  }
   .menu-icon {
     display: block;
     margin-left: auto;

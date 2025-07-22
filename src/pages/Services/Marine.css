@@ -30,7 +30,6 @@
 .marine-parks .card-body {
   display: flex;
   flex-direction: column;
-
   flex-grow: 1;
   padding: 15px;
   justify-content: flex-start;
@@ -45,6 +44,25 @@
   font-size: 1rem;
   color: #555;
 }
-.card-row-offset {
-  margin-left: 80px; /* Adjust to your needs */
+
+/* Fix layout for smaller screens */
+@media (max-width: 768px) {
+  .marine-parks {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Remove the extra margin and padding */
+  .card-row-offset {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    display: flex;
+    justify-content: center; /* Center the row */
+  }
+
+  /* Ensure columns take full width on mobile */
+  .card-row-offset .col {
+    flex: 0 0 100%; /* Ensure cards take full width on small screens */
+  }
 }
