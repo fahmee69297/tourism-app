@@ -50,9 +50,9 @@ function NationalParks() {
   };
 
   return (
-    <Container className="national-parks py-5 mt-5 shift-right">
+    <Container className="national-parks py-5 mt-5 justify-content-centre">
       <h1 className="text-center mb-4">Explore Kenya’s National Parks</h1>
-      <Row className="g-4 card-row-offset">
+      <Row className="g-4 card-row-offset ">
         {parks.map((park, index) => (
           <Col md={6} lg={4} key={index} className="h-100">
             <Card className="h-100">

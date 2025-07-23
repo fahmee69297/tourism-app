@@ -49,7 +49,7 @@ function MarineParks() {
   };
 
   return (
-    <Container className="marine-parks py-5 mt-5 shift-right">
+    <Container className="marine-parks py-5 mt-5 ">
       <div className="marine-parks-header text-center my-5">
         <h1>Explore Kenya's Marine Parks</h1>
       </div>

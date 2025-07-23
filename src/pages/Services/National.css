@@ -33,12 +33,10 @@
 
 .card-row-offset {
   margin-left: 200px; /* Optional — adjust or remove for full-width cards */
+  padding-left: 160px;
 }
 .card-actions {
   margin-top: auto;
   display: flex;
   justify-content: space-between;
-}
-.shift-right {
-  margin-left: 10% !important;
 }
