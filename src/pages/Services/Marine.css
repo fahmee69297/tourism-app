@@ -45,6 +45,10 @@
   color: #555;
 }
 
+.shift-right {
+  margin-left: 10% !important;
+}
+
 /* Fix layout for smaller screens */
 @media (max-width: 768px) {
   .marine-parks {

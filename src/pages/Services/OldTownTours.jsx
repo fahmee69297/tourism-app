@@ -50,7 +50,7 @@ function OldTownTours() {
   };
 
   return (
-    <Container className="old-town py-5 mt-5">
+    <Container className="old-town py-5 mt-5 shift-right">
       <h1 className="text-center mb-4">Discover Kenya’s Old Towns</h1>
       <Row className="g-4 card-row-offset">
         {towns.map((town, index) => (

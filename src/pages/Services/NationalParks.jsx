@@ -50,7 +50,7 @@ function NationalParks() {
   };
 
   return (
-    <Container className="national-parks py-5 mt-5">
+    <Container className="national-parks py-5 mt-5 shift-right">
       <h1 className="text-center mb-4">Explore Kenya’s National Parks</h1>
       <Row className="g-4 card-row-offset">
         {parks.map((park, index) => (
