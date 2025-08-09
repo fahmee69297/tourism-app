@@ -1,3 +1,4 @@
+/* Existing styles */
 .welcome-container {
   padding: 2rem;
   flex-grow: 1;
@@ -5,7 +6,6 @@
 
 .welcome-header {
   display: flex;
-
   font-size: 30px;
   align-items: center;
   justify-content: center;
@@ -15,13 +15,118 @@
 
 .welcome-main-msg {
   display: flex;
-
   font-size: 20px;
   align-items: center;
   justify-content: center;
   color: #003366;
   padding-bottom: 100px;
 }
+
 .home {
-  padding-bottom: 100px; /* or whatever spacing looks good */
+  padding-bottom: 100px;
+}
+
+/* New Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 26px;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+/* Image Grid Section */
+/* Image Grid Section */
+.image-grid-section {
+  padding: 2rem;
+  background-color: #f3f3f3;
+}
+
+.image-grid {
+  display: grid;
+  /* Set to 4 columns by default on larger screens */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 250px; /* You can adjust this value */
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  /* For medium screens, maybe show 3 columns */
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* For smaller screens, show 2 columns */
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .welcome-header {
+    font-size: 24px;
+    text-align: center;
+  }
+  .welcome-main-msg {
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  .section-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* For very small screens, show 1 column */
+  .image-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #e9f0f7;
+  padding: 2rem;
+}
+
+.testimonial {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  font-style: italic;
+  padding: 1rem;
+  border-left: 4px solid #007bff;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial h4 {
+  margin-top: 0.5rem;
+  text-align: right;
+  font-weight: normal;
+  color: #003366;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .welcome-header {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .welcome-main-msg {
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
 }

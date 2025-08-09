@@ -275,6 +275,14 @@ function InquiryFormModal({ show, handleClose, parkName, type }) {
                 checked={formData.ageChildren.includes("13-18yrs")}
                 onChange={handleChange}
               />
+              <Form.Check
+                type="checkbox"
+                label="No Children"
+                value="No Children"
+                name="ageChildren"
+                checked={formData.ageChildren.includes("No Children")}
+                onChange={handleChange}
+              />
             </div>
           </Form.Group>
 
