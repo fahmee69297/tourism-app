@@ -5,6 +5,7 @@ import Nav from "./components/nav";
 import Hero from "./components/Hero";
 import Home from "./components/Home";
 import Foot from "./components/footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Main pages
 import About from "./pages/About";
@@ -33,9 +34,12 @@ import TikTok from "./pages/Contact/TikTok";
 import LatestNews from "./pages/Blog/LatestNews";
 import FeaturedProducts from "./pages/FeaturedProducts";
 
+import SearchResults from "./components/SearchResults";
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container">
         <Nav />
         <main className="content">
@@ -81,6 +85,8 @@ function App() {
             <Route path="/contact/tiktok" element={<TikTok />} />
 
             <Route path="/blog/news" element={<LatestNews />} />
+
+            <Route path="/search" element={<SearchResults />} />
           </Routes>
         </main>
         <Foot />

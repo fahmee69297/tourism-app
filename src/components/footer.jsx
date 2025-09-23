@@ -1,5 +1,6 @@
 import React from "react";
 import "./footer.css"; // assuming you're importing a CSS file
+import { Link } from "react-router-dom";
 
 function Foot() {
   return (
@@ -35,16 +36,26 @@ function Foot() {
           </h3>
           <ul className="second-list">
             <li>
-              <button className="link-button">Home</button>
+              <li>
+                <Link to="/" className="link-button">
+                  Home
+                </Link>
+              </li>
             </li>
             <li>
-              <button className="link-button">Services</button>
+              <Link to="/services" className="link-button">
+                Services
+              </Link>
             </li>
             <li>
-              <button className="link-button">About us</button>
+              <Link to="/about" className="link-button">
+                About us
+              </Link>
             </li>
             <li>
-              <button className="link-button">Contact</button>
+              <Link to="/contact" className="link-button">
+                Contact
+              </Link>
             </li>
             <li>
               <button className="link-button">Features</button>

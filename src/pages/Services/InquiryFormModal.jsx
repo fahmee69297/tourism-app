@@ -19,6 +19,7 @@ function InquiryFormModal({ show, handleClose, parkName, type }) {
     currency: "",
     safariType: [],
     contactMethod: [],
+    promoCode: "",
   });
 
   const handleChange = (e) => {
@@ -386,6 +387,18 @@ function InquiryFormModal({ show, handleClose, parkName, type }) {
                 onChange={handleChange}
               />
             </div>
+          </Form.Group>
+
+          {/* Promo Code */}
+          <Form.Group className="mb-3" controlId="promoCodeInput">
+            <Form.Label>Promo Code (Optional)</Form.Label>
+            <Form.Control
+              type="text"
+              name="promoCode"
+              value={formData.promoCode}
+              onChange={handleChange}
+              placeholder="Enter promo code if you have one"
+            />
           </Form.Group>
 
           {/* Submit Button */}
