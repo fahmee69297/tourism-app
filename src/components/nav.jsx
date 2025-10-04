@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { packages } from "./data/packagesData";
 import InquiryFormModal from "../pages/Services/InquiryFormModal"; // adjust path if needed
@@ -11,6 +11,7 @@ function Nav() {
   const [modalShow, setModalShow] = useState(false); // For Book Now modal
   const navigate = useNavigate();
   const searchRef = useRef(null);
+  const headerRef = useRef(null);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => {
@@ -30,8 +31,19 @@ function Nav() {
     closeMenu();
   };
 
+  useEffect(() => {
+    const setHeaderOffset = () => {
+      const h = headerRef.current ? headerRef.current.offsetHeight : 75;
+      document.documentElement.style.setProperty("--header-offset", `${h}px`);
+    };
+
+    setHeaderOffset();
+    window.addEventListener("resize", setHeaderOffset);
+    return () => window.removeEventListener("resize", setHeaderOffset);
+  }, [menuOpen]);
+
   return (
-    <div className="header">
+    <div className="header" ref={headerRef}>
       {/* Website Name */}
       <div className="website-name">FADAK TRAVELS.com</div>
 

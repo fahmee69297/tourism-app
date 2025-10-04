@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import CompanyMission from "../pages/About/CompanyMission";
+import CompanyValues from "../pages/About/CompanyValues";
+import CompanyHistory from "../pages/About/CompanyHistory";
+import MeetTheTeam from "../pages/About/MeetTheTeam";
 import "./About.css";
 
 function About() {
@@ -22,71 +26,20 @@ function About() {
         Travels.
       </p>
 
-      {/* Company Mission */}
-      <section id="mission" className="py-5">
-        <div className="container px-4">
-          <div className="row">
-            <div className="col-lg-10">
-              <h2 className="fw-bold mb-3">Our Mission</h2>
-              <p>
-                At Fadak Travels, our mission is to connect people with nature
-                and culture through unforgettable travel experiences. We strive
-                to offer enriching, sustainable, and personalized adventures
-                that create lasting memories.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section id="mission">
+        <CompanyMission />
       </section>
 
-      {/* Company Values */}
-      <section id="values" className="py-5 bg-light">
-        <div className="container px-4">
-          <div className="row">
-            <div className="col-lg-10">
-              <h2 className="fw-bold mb-3">Our Values</h2>
-              <p>
-                Integrity, sustainability, customer focus, and cultural respect
-                guide everything we do. We believe in responsible tourism that
-                respects local communities and ecosystems.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section id="values">
+        <CompanyValues />
       </section>
 
-      {/* Company History */}
-      <section id="history" className="py-5">
-        <div className="container px-4">
-          <div className="row">
-            <div className="col-lg-10">
-              <h2 className="fw-bold mb-3">Our History</h2>
-              <p>
-                Founded in Mombasa, Kenya, Fadak Travels began as a small tour
-                company with a big dream: to make East Africa’s natural and
-                historical treasures accessible to all. Today, we serve hundreds
-                of travelers every year with curated tours and packages.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section id="history">
+        <CompanyHistory />
       </section>
 
-      {/* Meet the Team */}
-      <section id="team" className="py-5 bg-light">
-        <div className="container px-4">
-          <div className="row">
-            <div className="col-lg-10">
-              <h2 className="fw-bold mb-3">Meet the Team</h2>
-              <p>
-                Our team is made up of passionate travel experts, local guides,
-                and customer service pros who work together to ensure every trip
-                is smooth, safe, and unforgettable. Get to know the faces behind
-                Fadak.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section id="team">
+        <MeetTheTeam />
       </section>
     </div>
   );

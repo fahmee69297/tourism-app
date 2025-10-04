@@ -15,17 +15,17 @@ function Home() {
     {
       title: "Maasai Mara Safari",
       desc: "Experience the iconic Wildebeest Migration and enjoy luxury lodges in the heart of the savannah.",
-      img: "../assets/package1.jpeg",
+      img: "/assets/masai-mara.jpg",
     },
     {
       title: "Diani Beach Escape",
       desc: "Relax on pristine white sands, snorkel in turquoise waters, and soak in the coastal vibes.",
-      img: "../assets/package2.jpeg",
+      img: "/assets/diani.jpg",
     },
     {
       title: "Mount Kenya Adventure",
       desc: "Trek scenic trails, witness breathtaking peaks, and explore Kenya's second highest mountain.",
-      img: "../assets/package3.jpeg",
+      img: "/assets/mount-kenya.jpg",
     },
   ];
 
@@ -95,11 +95,11 @@ function Home() {
         </button>
         <div className="hero-image" style={{ marginTop: "2rem" }}>
           <img
-            src="../assets/home-hero.jpeg"
+            src="/assets/Amboseli.jpg"
             alt="Kenya Adventure"
             style={{
               width: "100%",
-              maxWidth: "900px",
+              maxWidth: "600px",
               borderRadius: "10px",
               objectFit: "cover",
             }}

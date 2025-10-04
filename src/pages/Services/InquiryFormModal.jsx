@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import emailjs from "emailjs-com";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 function InquiryFormModal({ show, handleClose, parkName, type }) {
   const [formData, setFormData] = useState({
@@ -58,6 +59,7 @@ function InquiryFormModal({ show, handleClose, parkName, type }) {
       contactMethod: formData.contactMethod.join(", "), // Join contact methods as a comma-separated string
       package_name: parkName,
       inquiry_type: type,
+      createdAt: serverTimestamp(),
     };
 
     emailjs
