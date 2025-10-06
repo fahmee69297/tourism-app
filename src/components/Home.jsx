@@ -52,7 +52,7 @@ function Home() {
     {
       quote:
         "Fadak Travels gave us the most amazing safari experience in Kenya! Highly professional and friendly service.",
-      author: "- Sarah M., UK",
+      author: "- Ali Abdulswamad, UK",
     },
     {
       quote:
@@ -95,7 +95,7 @@ function Home() {
         </button>
         <div className="hero-image" style={{ marginTop: "2rem" }}>
           <img
-            src="/assets/Amboseli.jpg"
+            src="/assets/home-small-img.jpg"
             alt="Kenya Adventure"
             style={{
               width: "100%",

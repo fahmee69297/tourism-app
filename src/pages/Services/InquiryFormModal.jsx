@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import emailjs from "emailjs-com";
+// REMOVED: import emailjs from "emailjs-com";
+import { db } from "../../firebase"; // ⬅️ ASSUMING you have this import/path for your Firestore instance
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 function InquiryFormModal({ show, handleClose, parkName, type }) {
@@ -38,64 +39,53 @@ function InquiryFormModal({ show, handleClose, parkName, type }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  // ➡️ Changed to async to handle Firestore operation
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const templateParams = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      country: formData.country,
-      phoneNumber: formData.phoneNumber,
-      email: formData.email,
-      duration: formData.duration,
-      safariStartDate: formData.safariStartDate,
-      safariEndDate: formData.safariEndDate,
-      numAdults: formData.numAdults,
-      numChildren: formData.numChildren,
-      ageChildren: formData.ageChildren.join(", "), // Join the age ranges as a comma-separated string
-      estimatedBudget: formData.estimatedBudget,
-      currency: formData.currency,
-      safariType: formData.safariType.join(", "), // Join the safari types as a comma-separated string
-      contactMethod: formData.contactMethod.join(", "), // Join contact methods as a comma-separated string
-      package_name: parkName,
-      inquiry_type: type,
+    // 1. Prepare data for Firestore
+    // This includes combining form data with passed props (parkName, type)
+    // Note: We leave array fields as arrays, as this is better for database querying/storage.
+    const inquiryData = {
+      ...formData,
+      parkName: parkName, // Added parkName
+      type: type, // Added inquiry type
       createdAt: serverTimestamp(),
     };
 
-    emailjs
-      .send(
-        "service_k2y3jxr", // e.g., service_xxxxx
-        "template_6k5rqjv", // e.g., template_xxxxx
-        templateParams,
-        "ZH_e6o5ySAwVvxgfW" // e.g., Px1sXvxxxx...
-      )
-      .then(
-        (response) => {
-          alert("Inquiry sent successfully!");
-          setFormData({
-            firstName: "",
-            lastName: "",
-            country: "",
-            phoneNumber: "",
-            email: "",
-            duration: "",
-            safariStartDate: "",
-            safariEndDate: "",
-            numAdults: "",
-            numChildren: "",
-            ageChildren: [],
-            estimatedBudget: "",
-            currency: "",
-            safariType: [],
-            contactMethod: [],
-          });
-          handleClose();
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          alert("Failed to send inquiry. Please try again.");
-        }
+    try {
+      // 2. Add document to the 'inquiries' collection in Firestore
+      await addDoc(collection(db, "inquiries"), inquiryData);
+
+      // 3. Success handling
+      alert("Inquiry submitted successfully!");
+
+      // Reset form state
+      setFormData({
+        firstName: "",
+        lastName: "",
+        country: "",
+        phoneNumber: "",
+        email: "",
+        duration: "",
+        safariStartDate: "",
+        safariEndDate: "",
+        numAdults: "",
+        numChildren: "",
+        ageChildren: [],
+        estimatedBudget: "",
+        currency: "",
+        safariType: [],
+        contactMethod: [],
+        promoCode: "",
+      });
+      handleClose();
+    } catch (error) {
+      console.error("Firestore Submission Error:", error);
+      alert(
+        "Failed to submit inquiry. Please check your network or try again."
       );
+    }
   };
 
   return (

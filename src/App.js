@@ -13,6 +13,9 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Packages from "./pages/Packages";
+import Admin from "./pages/Admin";
+import AdminLogin from "./pages/AdminLogin";
+import Login from "./pages/Login";
 
 // Subpages
 import MarineParks from "./pages/Services/MarineParks";
@@ -35,6 +38,7 @@ import LatestNews from "./pages/Blog/LatestNews";
 import FeaturedProducts from "./pages/FeaturedProducts";
 
 import SearchResults from "./components/SearchResults";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -58,6 +62,17 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/packages" element={<Packages />} />
             <Route path="/blog" element={<Blog />} />
+            {/* <Route path="/admin" element={<Admin />} /> */}
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <Admin />
+                </ProtectedRoute>
+              }
+            />
 
             {/* Subroutes */}
             <Route path="/services/marine-parks" element={<MarineParks />} />
